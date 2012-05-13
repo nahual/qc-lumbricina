@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Lumbricina - Compost Virtual
+		</title>
+
+		<!-- Meta -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<!-- Stylesheets -->
+        <link rel="stylesheet" href="static/css/reset.css" />
+        <link rel="stylesheet" href="static/css/style.css" />
+
+		<!-- Javascript -->
+        <script src="static/js/jquery-1.7.2.min.js"></script>
+        <script src="static/js/snake.js"></script>
+        <script src="static/js/bugomatic.js"></script>
+        <script>
+            var snake;
+            $(document).ready(function() {
+                snake = new Snake();
+                new BugOMatic('static/js').start();
+                snake.init();
+            });
+        </script>
+	</head>
+	<body>
+        <div id="content">
+            <div class="status_container">Puntos: <span id="score">0</span></div>
+            <div class="status_container">Nivel: <span id="level">0</span></div>
+            <canvas id="canvas" width="500" height="300"></canvas>
+            <div id="top_scores_container">
+                <span>Highscore:</span>
+                <ul id="top_scores">
+                    <li>No hay puntajes guarados</li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>Un juego basado en <a href="https://github.com/Yukilas/snake-html5">snake-html5 de Yukilas</a></p>
+        </footer>
+	</body>
+</html>

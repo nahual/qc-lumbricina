@@ -1,0 +1,39 @@
+body{
+    font-family: Helvetica, Arial, sans-serif;
+    color: #333333;
+}
+.status_container{
+    width: 500px;
+    margin: 10px auto 0 auto;
+    font-weight: bold;
+}
+#canvas{
+    display: block;
+    margin: 10px auto 0px auto;
+    background-color: white;
+}
+#top_scores_container{
+    width: 500px;
+    margin: 20px auto 0 auto;
+}
+#top_scores_container > span{
+    font-weight: bold;
+}
+#top_scores_container > ul{
+    margin: 10px 0 0 100px;
+    width: 300px;
+}
+#top_scores_container ul li{
+    clear: both;
+    margin: 10px 0 10px 0;
+}
+#top_scores_container ul li .name{
+
+}
+#top_scores_container ul li .score{
+    display: block;
+    float: right;
+}
+#canvas {
+    background-image: url('../background.jpg');
+}
