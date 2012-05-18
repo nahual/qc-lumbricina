@@ -22,7 +22,7 @@ function Snake(){
                     'r' : { 'preference' : 3, 'name' : 'crazy', 'color' : "green", 'reactions' : [ function() {snake._invert_right_left();}] },
                     't' : { 'preference' : 3, 'name' : 'gameover', 'color' : "black", 'reactions' : [ function() {snake._collision = true;}] },
                     'u' : { 'preference' : 2, 'name' : 'hunger', 'color' : "white", 'reactions' : [ function() {snake._hungerfy()},function() {snake._accelerate(); snake._accelerate(); snake._accelerate();}] },
-                    'v' : { 'preference' : 2, 'name' : 'shrinker', 'color' : "violet", 'reactions' : [ function() {snake._accelerate(); snake._accelerate(); snake._accelerate();}, function() {snake._shrink();}] },
+                    'v' : { 'preference' : 2000, 'name' : 'shrinker', 'color' : "violet", 'reactions' : [ function() {snake._accelerate(); snake._accelerate(); snake._accelerate();}, function() {snake._shrink();}] },
                  };
     this._levels = [
                      [], // 0
@@ -144,6 +144,8 @@ function Snake(){
             this.setBox(x, y, 's');
             x += this._box;
         }
+        $("#snake-speed").text(this._speed);
+        $("#snake-length").text(this._snake.length);
     }
     
     this._generate_level_obstacles = function() {
@@ -248,6 +250,9 @@ function Snake(){
                 if(this._direction != 'up')
                     this._direction = 'down';
                 break;
+            case 68:
+                $("#debug-info").toggle();
+                break;
             default:
                 break;
         }
@@ -298,6 +303,7 @@ function Snake(){
         } else {
             this._generate_bonus();
         }
+        $("#bonus-life").text(this._bonus ? this._bonus.life : 0);
     }
 
     this._remove_bonus = function() {
@@ -375,6 +381,7 @@ function Snake(){
             this._speed += 5;
         else if(this._speed < 200)
             this._speed += 1;
+        $("#snake-speed").text(this._speed);
     };
 
     this._slow_down = function(){
@@ -386,6 +393,7 @@ function Snake(){
             this._speed -= 10;
         else if(this._speed < 200)
             this._speed -= 20;
+        $("#snake-speed").text(this._speed);
     };
     
     this._increase_points = function(quantity){
@@ -395,6 +403,7 @@ function Snake(){
 
     this._grow = function() {
         this._has_to_grow = true;
+        $("#snake-length").text(this._snake.length);
     }
 
     this._invert_right_left = function() {
@@ -412,6 +421,7 @@ function Snake(){
         if (len > 4) {
             var box = this._snake.pop();
             this.setBox(box.x, box.y, '_');
+            $("#snake-length").text(this._snake.length-1);
         }
     }
 
