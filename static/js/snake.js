@@ -215,7 +215,7 @@ function Snake(){
      */
     this.keydown = function(key){
         var keys = this.key_bindings();
-        if(key != keys.ENTER && this._direction_changed)
+        if(key != keys.ENTER && key != 68 && key != 72 && this._direction_changed)
             return false;
         switch(key){
             case keys.ENTER:
@@ -252,6 +252,9 @@ function Snake(){
                 break;
             case 68:
                 $("#debug-info").toggle();
+                break;
+            case 72:
+                $("#game-info").toggle();
                 break;
             default:
                 break;
