@@ -22,7 +22,7 @@ function Snake(){
                     'r' : { 'preference' : 3, 'name' : 'crazy', 'color' : "green", 'reactions' : [ function() {snake._invert_right_left();}] },
                     't' : { 'preference' : 3, 'name' : 'gameover', 'color' : "black", 'reactions' : [ function() {snake._collision = true;}] },
                     'u' : { 'preference' : 2, 'name' : 'hunger', 'color' : "white", 'reactions' : [ function() {snake._hungerfy()},function() {snake._accelerate(); snake._accelerate(); snake._accelerate();}] },
-                    'v' : { 'preference' : 2000, 'name' : 'shrinker', 'color' : "violet", 'reactions' : [ function() {snake._accelerate(); snake._accelerate(); snake._accelerate();}, function() {snake._shrink();}] },
+                    'v' : { 'preference' : 2, 'name' : 'shrinker', 'color' : "violet", 'reactions' : [ function() {snake._accelerate(); snake._accelerate(); snake._accelerate();}, function() {snake._shrink();}] },
                  };
     this._levels = [
                      [], // 0
