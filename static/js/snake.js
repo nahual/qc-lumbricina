@@ -375,7 +375,7 @@ function Snake(){
     * Reactions to eating meals
     **/
     this._accelerate = function(){
-        if(this._speed >= 200)
+        if(this._speed >= 199)
             return
         if(this._speed < 100)
             this._speed += 20;
