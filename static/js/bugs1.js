@@ -1,5 +1,7 @@
-// Invirtiendo arriba y abajo
-snake.key_bindings = function() { return { ENTER : 13, LEFT : 37, UP : 40, RIGHT : 39, DOWN : 38}; };
+// Eliminando el nivel 6
+snake._levels.pop()
 
-// Eliminando las frutas azules
-snake._meal_options['p']['preference'] = 0;
+// Invirtiendo niveles 2 y 3
+var level_2 = snake._levels[1];
+snake._levels[1] = snake._levels[2];
+snake._levels[2] = level_2;
