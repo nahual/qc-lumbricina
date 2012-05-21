@@ -15,6 +15,7 @@ function Snake(){
     this._localstorage = null; //To know if the user's browser supports localstorage
     this._border_color = "gray"; //The color of the external borders
     this._snake_color = "rgb(194, 42, 53)"; //The color of the snake
+    this._max_scores = 5; // How many scores are shown?
     this._meal_options = {
                     'o' : { 'preference' : 0, 'name' : 'standard', 'color' : "red", 'reactions' : [ function() {snake._increase_points(100);}, function() { snake._grow(); }, function() { snake._generate_meal();}] },
                     'p' : { 'preference' : 3, 'name' : 'super bonus', 'color' : "blue", 'reactions' : [ function() {snake._increase_points(500);}, function() {snake._accelerate();}] },
@@ -440,7 +441,7 @@ function Snake(){
                 scores = JSON.parse(scores);
 
             //The game saves only five scores, if there's less than five saved score while it saves the new one
-            if(scores.length < 5){
+            if(scores.length < this._max_scores){
                 var username = prompt("Nombre : "); //Asks for the user's name
                 if(username == null || username == "") //Checks if there is a username
                     username = "Alguien";
