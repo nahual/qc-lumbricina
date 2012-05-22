@@ -39,3 +39,5 @@ snake.checkCollisions = function() {
     return snake.old_collisions();
 };
 
+function Bonus(box) { this.box = box; this.life = 40;}
+
