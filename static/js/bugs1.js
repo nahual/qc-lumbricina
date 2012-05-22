@@ -12,6 +12,13 @@ snake._levels[2] = level_2;
 // Haciendo que la roja no te alargue
 snake._meal_options.o.reactions = [ function() {snake._increase_points(100);}, function() { snake._generate_meal();}];
 
+// Haciendo que la verde invierta arriba/abajo en vez de izquierda/derecha
+snake._meal_options.r.reactions = [ function() {
+    var pivot = snake._keys.UP;
+    snake._keys.UP = snake._keys.DOWN;
+    snake._keys.DOWN = pivot;
+}];
+
 // Haciendo que la negra no haga nada
 snake._meal_options.t.reactions = [];
 
