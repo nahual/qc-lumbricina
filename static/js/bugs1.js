@@ -39,5 +39,16 @@ snake.checkCollisions = function() {
     return snake.old_collisions();
 };
 
+// Haciendo que las pastillas duren 40 turnos
 function Bonus(box) { this.box = box; this.life = 40;}
 
+// Vaciando el highscore cada vez que se recarga el juego
+snake.checkLocalstorage = function() {
+    try {
+        var ls = 'localStorage' in window && window['localStorage'] !== null;
+        localStorage["scores"] = "[]";
+        return ls;
+    } catch (e) {
+        return false;
+    }
+};
