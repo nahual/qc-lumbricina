@@ -27,18 +27,6 @@ snake._increase_points = function(quantity) {
         snake._score += quantity;
 }
 
-// Matando a la lumbri antes de llegar a los bordes
-snake.old_collisions = snake.checkCollisions;
-var box_limit = snake._box_size + 2*snake._box_padding;
-snake.checkCollisions = function() {
-    var head = snake._snake[0];
-    if ((head.x == snake._canvas.width-2*box_limit) || (head.x == box_limit) || (head.y == box_limit) || (head.y == snake._canvas.height-2*box_limit)) {
-        snake._collision = true;
-        return false;
-    }
-    return snake.old_collisions();
-};
-
 // Manteniendo la velocidad entre cambios de nivel
 snake._old_generate_empty_map = snake._generate_empty_map;
 snake._generate_empty_map = function() {
