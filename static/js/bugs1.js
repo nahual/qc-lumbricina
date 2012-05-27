@@ -1,7 +1,7 @@
 // Guardando solo 3 highscores
 snake._max_scores = 3;
 
-// Eliminando el nivel 6
+// Eliminando el ultimo nivel
 snake._levels.pop()
 
 // Invirtiendo niveles 2 y 3
