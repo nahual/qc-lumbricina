@@ -29,11 +29,8 @@ snake._increase_points = function(quantity) {
 
 // Manteniendo la velocidad entre cambios de nivel
 snake._old_generate_empty_map = snake._generate_empty_map;
-snake._generate_empty_map = function() {
-    var speed = snake._speed || 1;
-    snake._old_generate_empty_map();
-    snake._speed = speed;
-    $("#snake-speed").text(this._speed);
+snake._generate_empty_map = function(reset_speed) {
+    snake._old_generate_empty_map(snake._current_level == 1);
 }
 
 // Haciendo que las pastillas duren 40 turnos

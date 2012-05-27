@@ -85,7 +85,7 @@ function Snake(){
                 alert("The canvas height ("+this._canvas.height+") have to be a multiple of the box size ("+this._box+")");
 
             if(!dimensions_error){
-                this._generate_empty_map();
+                this._generate_empty_map(true);
                 this._generate_level_obstacles();
                 //Generates the meal
                 this._generate_meal();
@@ -109,16 +109,18 @@ function Snake(){
     this._change_level = function() {
         this._play = false;
         this._current_level += 1;
-        this._generate_empty_map();
+        this._generate_empty_map(true);
         this._generate_level_obstacles();
         this._generate_meal();
         $("#level").text(this._current_level);
         this._play = true;
     }
 
-    this._generate_empty_map = function() {
+    this._generate_empty_map = function(reset_speed) {
         this._direction = 'left';
-        this._speed = 1; //The initial speed of the snake
+        if (reset_speed || !this._speed) {
+            this._speed = 1; //The initial speed of the snake
+        }
         this._board = []; //Stocks all the box from the board
         this._snake = []; //Represents the snake's body
         //Generates the new empty board
