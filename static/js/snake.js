@@ -404,6 +404,7 @@ function Snake(){
     this._increase_points = function(quantity){
         this._score += quantity;
         $("#score").text(this._score);
+        $("#snake-score").text(this._score);
     }
 
     this._grow = function() {

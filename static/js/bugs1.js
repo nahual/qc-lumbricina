@@ -31,6 +31,7 @@ snake._meal_options.t.reactions = [];
 // No mostrando el puntaje en pantalla
 snake._increase_points = function(quantity) {
         snake._score += quantity;
+        $("#snake-score").text(this._score);
 }
 
 // Manteniendo la velocidad entre cambios de nivel
