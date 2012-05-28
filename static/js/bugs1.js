@@ -15,6 +15,9 @@ snake._meal_options.o.reactions = [ function() {snake._increase_points(100);}, f
 // Haciendo que la dorada te alargue
 snake._meal_options.q.reactions.push(function() {snake._grow();});
 
+// Haciendo que la blanca te sume puntos
+snake._meal_options.u.reactions.push(function() {snake._increase_points(100);});
+
 // Haciendo que la verde invierta arriba/abajo en vez de izquierda/derecha
 snake._meal_options.r.reactions = [ function() {
     var pivot = snake._keys.UP;
