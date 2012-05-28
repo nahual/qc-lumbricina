@@ -9,18 +9,18 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 		<!-- Stylesheets -->
-        <link rel="stylesheet" href="static/css/reset.css" />
-        <link rel="stylesheet" href="static/css/style.css" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/style.css" />
 
 		<!-- Javascript -->
-        <script src="static/js/jquery-1.7.2.min.js"></script>
-        <script src="static/js/snake.js"></script>
-        <script src="static/js/bugomatic.js"></script>
+        <script src="js/jquery-1.7.2.min.js"></script>
+        <script src="js/snake.js"></script>
+        <script src="js/bugomatic.js"></script>
         <script>
             var snake;
             $(document).ready(function() {
                 snake = new Snake();
-                new BugOMatic('static/js').start();
+                new BugOMatic('js').start();
                 snake.init();
             });
         </script>
