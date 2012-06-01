@@ -1,0 +1,21 @@
+body {
+    line-height: 1.5em;
+}
+
+table, th, tr, td {
+    border: solid 1px;
+    text-align: center;
+    vertical-align: top;
+}
+
+td.desc {
+    text-align: left;
+}
+
+th {
+    background: grey;
+}
+
+.emph {
+    font-weight: bold;
+}
