@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8" />
@@ -8,41 +8,101 @@
 <body>
 
 <h1>Especificaciones Lumbricina</h1>
-
-<table id="head">
+ <h2>Ubicación de lumbricina</h2>
+<ul>
+  <li><b>Inicio de cada nivel:</b> Al iniciar cada nivel, arranca hacia la izquierda, desde el medio de la pantalla, midiendo 3 unidades</li>
+  <li><b>Uso de teclas:</b> Se mueve usando las flechas del teclado: Arriba, Derecha, Abajo e Izquierda</li>
+  <li><b>Colisión:</b> Contra una pared, contra sí mismo o contra un obst&aacute;culo: MUERE (excepción cuando tom&oacute; la pastilla blanca, cuando los obst&aacute;culos desaparecen al pasarles por encima)</li>
+  </ul>
+ 
+  <h2>Pastillas</h2>
+  
+  Aparición de las pastillas: 
+  <ul>
+    <li>Siempre hay en la pantalla una pastilla roja en la pantalla</li>
+  <li>El resto de las pastillas van apareciendo aleatoriamente en la pantalla (una por vez) con probabilidad de ocurrencia según lo definido en el cuadro. Permanecen en la pantalla por 50 ciclos (movimientos/pasos de lumbricina)</li>
+  
+  <table id="head">
     <tr>
-        <th>Caso de uso</th>
-        <td>Lumbricina</td>
+        <th style="width:25%">Color</th>
+        <th style="width:15%">Puntos</th>
+        <th style="width:40%">Efecto</th>
+        <th style="width:20%">Prob. Aparici&oacute;n</th>
+    </tr>
+     <tr>
+        <td class="desc">Rojo</td>
+        <td>100</td>
+        <td>Longitud aumentada en 1</td>
+        <td>Siempre</td>
     </tr>
     <tr>
-        <th>Objetivo</th>
-        <td>Jugar</td>
+        <td class="desc">Azul</td>
+        <td>500</td>
+        <td>Velocidad aumentada</td>
+        <td>Media</td>
     </tr>
     <tr>
-        <th>Precondiciones</th>
-        <td>No hay precondiciones</td>
+        <td class="desc">Verde</td>
+        <td>1000</td>
+        <td>Invierte las teclas izquierda/derecha</td>
+        <td>Media</td>
+    </tr>
+    <tr>
+        <td class="desc">Violeta</td>
+        <td>0</td>
+        <td>Longitud disminu&iacute;da en 1 (si la lombriz mide 3 o m&aacute;s), velocidad aumentada (3 veces)</td>
+        <td>Baja</td>
+    </tr>
+    <tr>
+        <td class="desc">Dorada</td>
+        <td>0</td>
+        <td>Velocidad disminuída</td>
+        <td>Media</td>
+    </tr>
+    <tr>
+        <td class="desc">Negra</td>
+        <td>0</td>
+        <td>Game Over</td>
+        <td>Media</td>
+    </tr>
+    <tr>
+        <td class="desc">Blanca</td>
+        <td>0</td>
+        <td>Se come los obst&aacute;culos del nivel al pasarles por encima, velocidad aumentada (tres veces)</td>
+        <td>Baja</td>
+    </tr>
+    <tr>
+        <td class="desc">Naranja</td>
+        <td>0</td>
+        <td>Duplica los puntos</td>
+        <td>M</td>
     </tr>
 </table>
+</ul> 
 
-<ul>
-    <li>El sistema muestra la pantalla con las siguientes caracter&iacute;sticas
-        <ul>
-            <li><span class='emph'>T&iacute;tulo de la p&aacute;gina</span>: Lumbricina</li>
-            <li><span class='emph'>T&iacute;tulos de la aplicaci&oacute;n</span>:
-                <ul>
-                    <li>“Lumbricina”</li>
-                    <li>blah blah</li>
-                </ul>
-            </li>
-            <li><span class='emph'>La la</span> blah blah</li>
-            <li><span class='emph'>Le le</span> bleh bleh</li>
-            <li><span class='emph'>Li li</span> blih blih</li>
-        </ul>
-    </li>
-    <li>Niveles:<br>
+  <h2>Niveles</h2>
+  
+  <ul>
+  <li>Longitud inicial de lumbricina: 3</li>
+  <li>Cambio de estructura de pantalla por nivel (según los gr&aacute;ficos definidos en la secci&oacute;n "Niveles")</li>
+  <li>Una vez pasados los 5 niveles, Arranca de vuelta (igual que en el nivel 1)</li>
+    <li>Cambia de nivel cada 500 puntos!</li>
+  </ul>
+  
+  <h2>Manejo del Highscore</h2>
+  
+  <ul>
+  <li>Se muestran las 5 mejores puntajes</li>
+  <li>Se ordena de mayor menor según puntos. Si colisionan se guarda el &uacute;ltimo jugador.</li>
+  <li>Campo texto de 30 caracteres</li>
+    <li>Si se selecciona la opción ok sin haber completado el campo nombre, el sistema almacena el puntaje asociado al nombre “Alguien”</li>
+  </ul>
+
+  <h2>Niveles</h2>
+    <li>
     <img src="niveles.png">
     </li>
-    <li>Pastillas:<br>
+  <h2>Pastillas</h2>
         <ul>
             <li><span style="color:red">■</span>: 100 puntos, longitud+1</li>
             <li><span style="color:blue">■</span>: 500 puntos, velocidad aumentada</li>
@@ -53,7 +113,5 @@
             <li><span style="color:violet">■</span>: longitud-1, velocidad MUY aumentada</li>
             <li><span style="color:orange">■</span>: duplica los puntos</li>
     </ul>
-    </li>
-</ul>
 </body>
 </html>
